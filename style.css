@@ -9,7 +9,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #080808;
     color: #fff;
-    /* CAMBIO: Aggiunto scroll-behavior: smooth per l'animazione di default */
+    /* AGGIUNTO: Scorrimento fluido per l'animazione */
     scroll-behavior: smooth; 
     position: relative;
     min-height: 100vh;
@@ -86,18 +86,18 @@ body {
 
 /* Sections */
 .section {
-    /* CAMBIO: Aumento del padding verticale per ingrandire le sezioni */
+    /* AGGIORNATO: Aumento del padding verticale */
     padding: 120px 40px; 
     text-align: center;
 }
 
-/* CAMBIO: Aumento della dimensione dei titoli delle sezioni */
+/* AGGIORNATO: Aumento dimensione dei titoli delle sezioni */
 .section h3 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #fff;
 }
-/* CAMBIO: Aumento dimensione del testo About Me */
+/* AGGIORNATO: Aumento dimensione del testo About Me */
 #about p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -110,21 +110,21 @@ body {
 .skills-section .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 25px; /* Aumento spazio */
+    gap: 25px;
     margin-top: 30px;
     justify-items: center;
 }
 
 .skill-card {
     background: #111;
-    padding: 20px 25px; /* Aumento padding card */
+    padding: 20px 25px;
     border-radius: 8px;
     transition: transform 0.3s, background 0.3s;
     cursor: default;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px; /* Aumento spazio interno */
+    gap: 12px;
     border: none; 
 }
 
@@ -136,33 +136,33 @@ body {
 
 .skill-name {
     color: #fff;
-    font-size: 18px; /* Aumento dimensione skill name */
+    font-size: 18px;
     font-weight: 500;
     text-align: center;
 }
 
 .skill-icon {
-    font-size: 40px; /* Aumento dimensione icona */
+    font-size: 40px;
     color: #888; 
 }
 
 /* Projects grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Minore restrizione per ingrandire card */
-    gap: 30px; /* Aumento spazio */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin-top: 30px;
 }
 
 .project-card {
     background: #111;
-    padding: 30px; /* Aumento padding card */
+    padding: 30px;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .project-card h4 {
-    font-size: 1.5rem; /* Aumento titolo progetto */
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 .project-card p {
@@ -180,7 +180,7 @@ body {
     color: #888;
     text-decoration: none;
     font-weight: normal;
-    display: block; /* Rende il link un blocco per maggiore area cliccabile */
+    display: block;
     margin-top: 10px;
 }
 
@@ -240,4 +240,14 @@ body {
 }
 #toggle-music.paused .fas {
     color: #ccc; 
+}
+
+/* AGGIORNATO: Footer Style (piccolo) */
+.footer {
+    padding: 10px 0; 
+    text-align: center;
+    background: #000;
+    color: #555; 
+    font-size: 0.8rem; /* Molto piccolo */
+    border-top: 1px solid #111;
 }
