@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             this.vx = (Math.random() - 0.5) * 0.4; 
             this.vy = (Math.random() - 0.5) * 0.4;
             
-            // MODIFICA 1: Grandezza triplicata (Era: * 1.5 + 1.5)
-            // Ora: * 4.5 + 4.5 (Raggio tra 4.5 e 9 pixel)
-            this.radius = Math.random() * 4.5 + 4.5; 
+            // MODIFICA 1: Grandezza quadruplicata (Rispetto al triplo precedente, usiamo un moltiplicatore maggiore)
+            // Era: Math.random() * 4.5 + 4.5 (Max 9px). Ora: Math.random() * 6 + 6 (Max 12px)
+            this.radius = Math.random() * 6 + 6; 
         }
 
         update() {
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         draw() {
+            // Colore dei puntini
             ctx.fillStyle = 'rgba(100, 100, 100, 0.8)';
             ctx.beginPath();
-            this.radius = Math.random() * 1.5 + 1.5;
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
             ctx.fill();
         }
@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function drawLines() {
-        // Soglia di connessione (125)
-        const threshold = 125; 
+        // MODIFICA 2: Soglia di connessione aumentata a 300 pixel
+        const threshold = 300; 
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
@@ -63,9 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (distance < threshold) {
                     const opacity = 1 - (distance / threshold);
-                    ctx.strokeStyle = `rgba(100, 100, 100, ${opacity * 0.15})`; 
                     
-                    // MODIFICA 2: Spessore linea triplicato (Era: 1)
+                    // MODIFICA 3: Colore delle linee più scuro (RGB 50, 50, 50, era 100, 100, 100)
+                    ctx.strokeStyle = `rgba(50, 50, 50, ${opacity * 0.15})`; 
+                    
+                    // Spessore linea triplicato (3)
                     ctx.lineWidth = 3; 
                     
                     ctx.beginPath();
