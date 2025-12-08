@@ -9,7 +9,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #080808;
     color: #fff;
-    scroll-behavior: smooth;
+    /* CAMBIO: Aggiunto scroll-behavior: smooth per l'animazione di default */
+    scroll-behavior: smooth; 
     position: relative;
     min-height: 100vh;
 }
@@ -51,7 +52,6 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    /* RIPRISTINO: Bordo della foto in grigio */
     border: 3px solid #888; 
     z-index: 2;
     position: relative;
@@ -70,7 +70,6 @@ body {
 /* Buttons */
 .btn {
     padding: 12px 25px;
-    /* RIPRISTINO: Colore principale del bottone in grigio scuro */
     background: #333;
     color: #fff;
     border-radius: 5px;
@@ -82,93 +81,115 @@ body {
 }
 
 .btn:hover {
-    background: #555; /* Grigio più chiaro all'hover */
+    background: #555; 
 }
 
 /* Sections */
 .section {
-    padding: 100px 40px;
+    /* CAMBIO: Aumento del padding verticale per ingrandire le sezioni */
+    padding: 120px 40px; 
     text-align: center;
 }
+
+/* CAMBIO: Aumento della dimensione dei titoli delle sezioni */
+.section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+/* CAMBIO: Aumento dimensione del testo About Me */
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 
 /* Skills grid */
 .skills-section .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
+    gap: 25px; /* Aumento spazio */
     margin-top: 30px;
     justify-items: center;
 }
 
 .skill-card {
     background: #111;
-    padding: 15px 20px;
+    padding: 20px 25px; /* Aumento padding card */
     border-radius: 8px;
     transition: transform 0.3s, background 0.3s;
     cursor: default;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    /* RIPRISTINO: Bordo leggero */
+    gap: 12px; /* Aumento spazio interno */
     border: none; 
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    /* RIPRISTINO: Colore all'hover */
     background: #1a1a1a; 
     border-color: #1a1a1a;
 }
 
 .skill-name {
     color: #fff;
-    font-size: 16px;
+    font-size: 18px; /* Aumento dimensione skill name */
     font-weight: 500;
     text-align: center;
 }
 
 .skill-icon {
-    font-size: 36px;
-    /* RIPRISTINO: Colore icona in grigio */
+    font-size: 40px; /* Aumento dimensione icona */
     color: #888; 
 }
 
 /* Projects grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Minore restrizione per ingrandire card */
+    gap: 30px; /* Aumento spazio */
     margin-top: 30px;
 }
 
 .project-card {
     background: #111;
-    padding: 20px;
+    padding: 30px; /* Aumento padding card */
     border-radius: 10px;
     transition: 0.3s;
 }
 
+.project-card h4 {
+    font-size: 1.5rem; /* Aumento titolo progetto */
+    margin-bottom: 10px;
+}
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
 .project-card:hover {
     transform: translateY(-5px);
-    /* RIPRISTINO: Colore all'hover */
     background: #0e0e0e; 
     border: none;
 }
 
-/* RIPRISTINO: Colore link progetto in grigio */
 .project-card a {
     color: #888;
     text-decoration: none;
     font-weight: normal;
+    display: block; /* Rende il link un blocco per maggiore area cliccabile */
+    margin-top: 10px;
 }
 
-/* MUSIC CONTROLS STYLE */
+/* MUSIC CONTROLS STYLE (invariato) */
 #music-controls {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #1a1a1a; /* Scuro */
+    background: #1a1a1a; 
     padding: 10px 15px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -176,12 +197,10 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* RIPRISTINO: Bordo del pop-up in grigio */
     border: 1px solid #333;
 }
 
 #toggle-music {
-    /* RIPRISTINO: Bottone in grigio scuro */
     background: #333; 
     color: #fff;
     border: none;
@@ -193,7 +212,7 @@ body {
 }
 
 #toggle-music:hover {
-    background: #555; /* Grigio all'hover */
+    background: #555; 
     color: #fff;
 }
 
@@ -203,7 +222,6 @@ body {
     -webkit-appearance: none;
     appearance: none;
     height: 4px;
-    /* RIPRISTINO: Colore traccia slider in grigio */
     background: #555;
     border-radius: 2px;
 }
@@ -214,15 +232,12 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    /* RIPRISTINO: Pollice slider in bianco */
     background: #fff; 
 }
 
-/* Stile quando la musica è in pausa */
 #toggle-music.paused {
     background: #444; 
 }
-/* RIPRISTINO: Colore mute/pausa icona */
 #toggle-music.paused .fas {
     color: #ccc; 
 }
