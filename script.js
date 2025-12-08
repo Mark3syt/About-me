@@ -33,6 +33,7 @@ function update() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2);
+        // RIPRISTINO: Colore dei punti in grigio
         ctx.fillStyle = '#888';
         ctx.fill();
     }
@@ -48,7 +49,8 @@ function update() {
                 ctx.beginPath();
                 ctx.moveTo(p1.x, p1.y);
                 ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle = `rgba(200,200,200,${1 - dist / MAX_DISTANCE})`;
+                // RIPRISTINO: Colore delle linee di sfondo in grigio con opacità
+                ctx.strokeStyle = `rgba(200,200,200,${1 - dist / MAX_DISTANCE})`; 
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
             }
@@ -70,14 +72,13 @@ const audio = document.getElementById('background-music');
 const toggleButton = document.getElementById('toggle-music');
 const volumeSlider = document.getElementById('volume-slider');
 
-// Imposta lo stato iniziale (mutato, perché l'autoplay è spesso bloccato)
+// Imposta lo stato iniziale 
 toggleButton.classList.add('paused');
 toggleButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; 
-audio.volume = volumeSlider.value; // Sincronizza il volume iniziale (ora 0.4)
+audio.volume = volumeSlider.value; // Sincronizza il volume iniziale (ora 0.05)
 
 toggleButton.addEventListener('click', () => {
     if (audio.paused) {
-        // Tenta di riprodurre
         audio.play().catch(error => {
             console.log("Autoplay bloccato:", error);
         });
@@ -95,14 +96,14 @@ volumeSlider.addEventListener('input', () => {
     // Aggiorna l'icona del volume in base al livello e allo stato
     if (audio.volume == 0) {
         toggleButton.innerHTML = '<i class="fas fa-volume-off"></i>';
-        if (!audio.paused) audio.pause(); // Metti in pausa se il volume è zero
+        if (!audio.paused) audio.pause(); 
         toggleButton.classList.add('paused');
     } else if (audio.paused) {
         toggleButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
     } 
     else {
         toggleButton.innerHTML = '<i class="fas fa-volume-up"></i>';
-        if (audio.paused) audio.play(); // Fai ripartire se si alza il volume da 0
+        if (audio.paused) audio.play(); 
         toggleButton.classList.remove('paused');
     }
 });
