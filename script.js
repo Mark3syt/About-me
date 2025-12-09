@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
             
-            // ✅ VELOCITÀ VARIABILE (da 0.5 a 2)
-            // Moltiplicatore da (0.5 + 1.5) = 0.5 a 2
-            const speedMultiplier = Math.random() * 1.5 + 0.5; 
-            this.vx = (Math.random() - 0.5) * speedMultiplier; 
-            this.vy = (Math.random() - 0.5) * speedMultiplier;
+            // VELOCITÀ VARIABILE (da 0.5 a 2)
+            const speedMultiplier = Math.random() * 1.5 + 0.5;
+            // VELOCITÀ AUMENTATA (0.8 max)
+            this.vx = (Math.random() - 0.5) * 0.8; 
+            this.vy = (Math.random() - 0.5) * 0.8;
             
-            // ✅ GRANDEZZA MEDIA/GRANDE (da 2 a 5 pixel di raggio)
-            this.radius = Math.random() * 3 + 2; 
+            // GRANDEZZA MEDIA/GRANDE (da 1.5 a 5 pixel di raggio)
+            this.radius = Math.random() * 3.5 + 1.5; 
         }
 
         update() {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         draw() {
-            // ✅ PUNTINI LUMINOSI (Bianco con opacità 0.9)
+            // PUNTINI LUMINOSI (Bianco con opacità 0.9)
             ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function drawLines() {
-        // ✅ LUNGHEZZA MASSIMA DELLE LINEE (Aumentata per maggiore visibilità iniziale)
-        const threshold = 150; 
+        // LUNGHEZZA DI ATTACCO AUMENTATA (90 pixel)
+        const threshold = 90; 
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
@@ -59,15 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < threshold) {
-                    // ✅ SFUMATURA DELLE LINEE: Opacità più alta da vicino, decresce rapidamente
-                    // Partiamo da un'opacità massima più alta (0.7)
+                    // LINEE LUMINOSE E SFUMATE
                     const opacity = 1 - (distance / threshold);
                     
-                    // ✅ LINEE LUMINOSE (Bianco)
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.7})`; 
+                    // Bianco (255, 255, 255) con alta opacità da vicino
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.5})`; 
                     
-                    // Spessore linea da 1 a 2 pixel per renderle più visibili
-                    ctx.lineWidth = 1 + (1 - opacity); // Più spessa da vicino
+                    // SPESSORE SOTTILISSIMO (0.25 pixel)
+                    ctx.lineWidth = 0.25; 
                     
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
@@ -128,4 +127,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
