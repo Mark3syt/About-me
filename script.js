@@ -24,9 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.vx = (Math.random() - 0.5) * 0.4; 
             this.vy = (Math.random() - 0.5) * 0.4;
             
-            // MODIFICA 1: Grandezza quadruplicata (Rispetto al triplo precedente, usiamo un moltiplicatore maggiore)
-            // Era: Math.random() * 4.5 + 4.5 (Max 9px). Ora: Math.random() * 6 + 6 (Max 12px)
-            this.radius = Math.random() * 6 + 6; 
+            // MODIFICA 1: Grandezza dimezzata (Era: * 6 + 6. Ora: * 3 + 3. Max 6px)
+            this.radius = Math.random() * 3 + 3; 
         }
 
         update() {
@@ -38,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         draw() {
-            // Colore dei puntini
-            ctx.fillStyle = 'rgba(100, 100, 100, 0.8)';
+            // MODIFICA 2: Colore bianco sfuso (Opacità 0.5)
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
             ctx.fill();
@@ -53,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function drawLines() {
-        // MODIFICA 2: Soglia di connessione aumentata a 300 pixel
-        const threshold = 300; 
+        // MODIFICA 3: Soglia di connessione aumentata (più lunghe) a 350 pixel
+        const threshold = 350; 
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
@@ -64,11 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (distance < threshold) {
                     const opacity = 1 - (distance / threshold);
                     
-                    // MODIFICA 3: Colore delle linee più scuro (RGB 50, 50, 50, era 100, 100, 100)
-                    ctx.strokeStyle = `rgba(50, 50, 50, ${opacity * 0.15})`; 
+                    // MODIFICA 4: Linee più visibili (Opacità aumentata a 0.3)
+                    // Usiamo un grigio chiaro per contrastare meglio
+                    ctx.strokeStyle = `rgba(180, 180, 180, ${opacity * 0.3})`; 
                     
-                    // Spessore linea triplicato (3)
-                    ctx.lineWidth = 3; 
+                    // MODIFICA 5: Spessore linea più doppio (Era 3. Ora 5)
+                    ctx.lineWidth = 5; 
                     
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
