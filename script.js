@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ------------------------------------
-    // 1. LOGICA DEL BACKGROUND (NETWORK)
-    // ------------------------------------
     const canvas = document.getElementById('network');
     const ctx = canvas.getContext('2d');
     let width, height;
     let particles = [];
     
-    // Numero di particelle (600)
     const maxParticles = 600;
 
     function resizeCanvas() {
@@ -20,12 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
             
-            // Velocità media (0.4)
             this.vx = (Math.random() - 0.5) * 0.4; 
             this.vy = (Math.random() - 0.5) * 0.4;
             
-            // MODIFICA 1: Grandezza dimezzata (Era: * 6 + 6. Ora: * 3 + 3. Max 6px)
-            this.radius = Math.random() * 3 + 3; 
+            this.radius = Math.random() * 3.5 + 1.5; 
         }
 
         update() {
@@ -37,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         draw() {
-            // MODIFICA 2: Colore bianco sfuso (Opacità 0.5)
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
             ctx.fill();
@@ -52,8 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function drawLines() {
-        // MODIFICA 3: Soglia di connessione aumentata (più lunghe) a 350 pixel
-        const threshold = 350; 
+        const threshold = 120; 
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
@@ -63,12 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (distance < threshold) {
                     const opacity = 1 - (distance / threshold);
                     
-                    // MODIFICA 4: Linee più visibili (Opacità aumentata a 0.3)
-                    // Usiamo un grigio chiaro per contrastare meglio
                     ctx.strokeStyle = `rgba(180, 180, 180, ${opacity * 0.3})`; 
                     
-                    // MODIFICA 5: Spessore linea più doppio (Era 3. Ora 5)
-                    ctx.lineWidth = 5; 
+                    ctx.lineWidth = 1; 
                     
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
@@ -96,17 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
 
 
-    // ------------------------------------
-    // 2. LOGICA CONTROLLI MUSICA
-    // ------------------------------------
     const music = document.getElementById('background-music');
     const toggleButton = document.getElementById('toggle-music');
     const volumeSlider = document.getElementById('volume-slider');
 
-    // Imposta il volume iniziale basso
     music.volume = parseFloat(volumeSlider.value);
 
-    // Gestisce play/pause
     toggleButton.addEventListener('click', () => {
         if (music.paused) {
             music.play().catch(e => console.log("User interaction required to play audio."));
@@ -119,20 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestisce il cambio di volume
     volumeSlider.addEventListener('input', (e) => {
         music.volume = parseFloat(e.target.value);
     });
 
-    // Aggiusta il pulsante se la musica parte automaticamente
     music.addEventListener('play', () => {
         toggleButton.innerHTML = '<i class="fas fa-volume-up"></i>';
         toggleButton.classList.remove('paused');
     });
 
-    // Aggiusta il pulsante se la musica non parte automaticamente (per restrizioni browser)
     music.addEventListener('pause', () => {
-        // Controlla se è stata l'azione di pausa dell'utente o una restrizione del browser
         if (!toggleButton.classList.contains('paused')) {
              toggleButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
         }
