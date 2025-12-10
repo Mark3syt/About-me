@@ -47,22 +47,25 @@ h3 {
     z-index: 10;
 }
 
+/* ✅ IMMAGINE INGRANDITA */
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     border: 3px solid #fff;
     margin-bottom: 20px;
     object-fit: cover;
 }
 
+/* ✅ NOME INGRANDITO */
 .hero-name {
-    font-size: 3em;
+    font-size: 4.5em; 
     margin: 5px 0;
 }
 
+/* ✅ SOTTOTITOLO INGRANDITO */
 .hero-subtitle {
-    font-size: 1.2em;
+    font-size: 1.8em; 
     color: #ccc;
     margin-bottom: 30px;
 }
