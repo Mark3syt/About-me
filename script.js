@@ -1,11 +1,10 @@
 /* === CONFIGURAZIONE E INIZIALIZZAZIONE DI PARTICLES.JS === */
 
-// La libreria particles.js è stata caricata prima di questo script.
 // Usiamo la funzione globale particlesJS per inizializzare lo sfondo.
 particlesJS('particles-js', {
     "particles": {
         "number": {
-            "value": 400, // Il tuo valore predefinito
+            "value": 80, // AGGIORNATO: Numero di particelle ridotto (era 400)
             "density": {
                 "enable": true,
                 "value_area": 800
@@ -35,8 +34,8 @@ particlesJS('particles-js', {
             }
         },
         "size": {
-            "value": 2.5, // Ridotto un po' per un effetto "network" più fine
-            "random": true, // Reso randomico
+            "value": 5, // AGGIORNATO: Dimensione delle particelle aumentata (era 2.5)
+            "random": true,
             "anim": {
                 "enable": false,
                 "speed": 40,
@@ -46,16 +45,16 @@ particlesJS('particles-js', {
         },
         "line_linked": {
             "enable": true,
-            "distance": 150, // Aumentato per un effetto connessione più visibile
+            "distance": 150,
             "color": "#ffffff",
             "opacity": 0.4,
             "width": 1
         },
         "move": {
             "enable": true,
-            "speed": 1.5, // Velocità ridotta
+            "speed": 4, // AGGIORNATO: Velocità aumentata (era 1.5)
             "direction": "none",
-            "random": true, // Reso randomico
+            "random": true,
             "straight": false,
             "out_mode": "out",
             "bounce": false,
@@ -71,11 +70,11 @@ particlesJS('particles-js', {
         "events": {
             "onhover": {
                 "enable": true,
-                "mode": "grab" // Modalità "grab" per l'interattività al passaggio del mouse
+                "mode": "grab"
             },
             "onclick": {
                 "enable": true,
-                "mode": "push" // Modalità "push" al click
+                "mode": "push"
             },
             "resize": true
         },
@@ -122,8 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleButton.addEventListener('click', () => {
         if (music.paused) {
             // Tenta di avviare la riproduzione.
-            // Nota: molti browser bloccano l'autoplay se non c'è stata interazione
-            // dell'utente. Qui l'utente sta cliccando, quindi dovrebbe funzionare.
             music.play().then(() => {
                 icon.classList.remove('fa-volume-off');
                 icon.classList.add('fa-volume-up');
