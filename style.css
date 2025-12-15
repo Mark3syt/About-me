@@ -5,7 +5,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000; /* Deep black background */
     color: #fff;
-    line-height: 2; /* Increased line height for better readability */
+    line-height: 2; 
     overflow-x: hidden;
 }
 
@@ -24,23 +24,23 @@ body {
 .section {
     position: relative;
     z-index: 10;
-    padding: 80px 5%; /* More vertical padding */
-    max-width: 1200px; /* Wider content area */
+    padding: 80px 5%; /* Padding generoso */
+    max-width: 1200px; /* Larghezza massima */
     margin: 0 auto;
-    text-align: center; /* Ensures text and block elements are centered */
+    text-align: center; /* Centra il testo e la maggior parte degli elementi */
 }
 
 h3 {
-    font-size: 2.5em; /* Larger section titles */
+    font-size: 2.5em; 
     margin-bottom: 30px;
-    border-bottom: 4px solid #00c4cc; /* Thicker accent border */
+    border-bottom: 4px solid #00c4cc; 
     padding-bottom: 15px;
     display: inline-block;
     letter-spacing: 1px;
 }
 
 .large-text {
-    font-size: 1.4em; /* Paragraph text significantly larger */
+    font-size: 1.4em;
 }
 
 /* HERO SECTION */
@@ -55,32 +55,32 @@ h3 {
 }
 
 .profile-pic {
-    width: 300px; /* Even larger profile picture */
+    width: 300px; 
     height: 300px;
     border-radius: 50%;
-    border: 6px solid #00c4cc;
+    border: 6px solid #555; /* Bordo grigio più discreto per il tema scuro */
     margin-bottom: 40px;
     object-fit: cover;
-    box-shadow: 0 0 30px rgba(0, 196, 204, 0.5); /* Stronger glow effect */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Ombra discreta */
 }
 
 .hero-name {
-    font-size: 6.5em; /* Biggest name font */
+    font-size: 6.5em;
     margin: 10px 0;
     letter-spacing: 3px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    color: #fff;
 }
 
 .hero-subtitle {
     font-size: 2.5em;
-    color: #bbb; /* Lighter grey for better contrast */
+    color: #bbb; /* Grigio chiaro per il sottotitolo */
     margin-bottom: 50px;
 }
 
 .btn {
     display: inline-block;
     background-color: transparent;
-    border: 4px solid #00c4cc; /* Thicker border */
+    border: 4px solid #fff; /* Bordo bianco per CTA */
     color: #fff;
     padding: 15px 35px;
     text-decoration: none;
@@ -92,18 +92,18 @@ h3 {
 }
 
 .large-btn {
-    padding: 20px 50px; /* Extra large CTA button */
+    padding: 20px 50px; 
     font-size: 1.5em;
 }
 
 .btn:hover {
-    background-color: #00c4cc;
+    background-color: #00c4cc; /* Accent color on hover */
     color: #000;
     border-color: #00c4cc;
 }
 
 .discord-btn {
-    background-color: #5865f2;
+    background-color: #5865f2; 
     border-color: #5865f2;
 }
 
@@ -118,34 +118,34 @@ h3 {
 
 /* Specific color definitions for icons */
 .cpp-color { color: #00599c !important; } 
-.c-color { color: #888888 !important; }
+.c-color { color: #888888 !important; } 
 .java-color { color: #ea2d2e !important; }
 .js-color { color: #f7df1e !important; }
-.csharp-color { color: #9B00FF !important; }
+.csharp-color { color: #9B00FF !important; } 
 .python-color { color: #306998 !important; }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Larger skill cards */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
     gap: 40px;
     text-align: center;
 }
 
 .skill-card {
-    background-color: #111; /* Very dark background for cards */
+    background-color: #111; /* Sfondo card molto scuro */
     padding: 40px 20px;
     border-radius: 15px;
-    border: 1px solid #333;
+    border: 1px solid #444; /* Bordo grigio scuro */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 25px rgba(0, 196, 204, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .skill-icon {
-    font-size: 5.5em; /* Massive Icons */
+    font-size: 5.5em; 
     margin-bottom: 15px;
 }
 
@@ -159,7 +159,7 @@ h3 {
 /* PROJECTS SECTION */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Wider project cards */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
     gap: 50px;
     margin-top: 40px;
 }
@@ -168,14 +168,14 @@ h3 {
     background-color: #111;
     padding: 30px;
     border-radius: 15px;
-    border: 2px solid #333;
+    border: 1px solid #444;
     text-align: left;
 }
 
 .project-card h4 {
     margin-top: 0;
     color: #00c4cc;
-    font-size: 1.8em; /* Larger project title */
+    font-size: 1.8em; 
     margin-bottom: 15px;
 }
 
@@ -199,7 +199,7 @@ h3 {
     background-color: #00a0a8;
 }
 
-/* MUSIC CONTROLS (Increased size) */
+/* MUSIC CONTROLS */
 #music-controls {
     position: fixed;
     bottom: 30px;
@@ -214,7 +214,7 @@ h3 {
     border: 3px solid #00c4cc;
     color: #00c4cc;
     border-radius: 50%;
-    width: 60px; /* Larger button */
+    width: 60px; 
     height: 60px;
     cursor: pointer;
     margin-right: 15px;
@@ -223,27 +223,6 @@ h3 {
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
-}
-
-#volume-slider {
-    width: 120px; /* Longer slider */
-    -webkit-appearance: none;
-    appearance: none;
-    height: 10px; /* Thicker slider track */
-    background: #555;
-    outline: none;
-    opacity: 0.9;
-    transition: opacity .2s;
-}
-
-#volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 22px; /* Larger thumb */
-    height: 22px;
-    border-radius: 50%;
-    background: #00c4cc;
-    cursor: pointer;
 }
 
 /* FOOTER */
@@ -255,5 +234,5 @@ h3 {
     margin-top: 100px;
     border-top: 1px solid #111;
     font-size: 1.1em;
-    color: #666; /* Subtle grey text */
+    color: #666; 
 }
