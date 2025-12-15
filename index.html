@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Emanuele – About Me</title>
+    <title>Emanuele – Full Stack Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap" rel="stylesheet"> 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,14 +29,39 @@
         <div class="hero-content">
             <img src="profile.jpg" alt="Emanuele Profile Picture" class="profile-pic">
             <h1 class="hero-name">Emanuele</h1>
-            <p class="hero-subtitle">Full Stack Developer</p> <a href="#projects" class="btn large-btn scroll-link">View My Projects</a>
+            <p class="hero-subtitle">Full Stack Developer</p>
+            <a href="#projects" class="btn large-btn scroll-link">View My Projects</a>
         </div>
     </section>
 
     <section id="skills" class="section skills-section">
         <h3>⚡️ Technical Skills</h3>
         <div class="skills-grid">
+            <div class="skill-card">
+                <i class="devicon-cplusplus-plain skill-icon cpp-color"></i>
+                <span class="skill-name">C++</span>
             </div>
+            <div class="skill-card">
+                <i class="devicon-c-plain skill-icon c-color"></i>
+                <span class="skill-name">C</span>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-java-plain skill-icon java-color"></i>
+                <span class="skill-name">Java</span>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-javascript-plain skill-icon js-color"></i>
+                <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-csharp-plain skill-icon csharp-color"></i>
+                <span class="skill-name">C#</span>
+            </div>
+            <div class="skill-card">
+                <i class="devicon-python-plain skill-icon python-color"></i>
+                <span class="skill-name">Python</span>
+            </div>
+        </div>
     </section>
 
     <section id="about" class="section">
@@ -44,6 +69,39 @@
         <p class="large-text">Hello, I'm Emanuele. I specialize in building robust and scalable applications from the front-end interface down to the backend infrastructure. My curiosity drives me to explore security analysis, ensuring every line of code is as secure as it is efficient. See below for a selection of my latest projects and skills.</p>
     </section>
 
+    <section id="projects" class="section">
+        <h3>📂 Recent Projects</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h4>EasyLink (C++)</h4>
+                <p>A C++ program for shortening URLs using a personal server (designed for Windows).</p>
+                <a href="https://github.com/Mark3syt/EasyLink" target="_blank" class="project-link">View Project</a>
+            </div>
+            
+            <div class="project-card">
+                <h4>Scuk (Python)</h4>
+                <p>A text-based Python adventure game (CLI).</p>
+                <a href="https://github.com/Mark3syt/Scuk" target="_blank" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <h4>Crypto-Tool CLI (Python)</h4>
+                <p>A Python CLI for file hashing (SHA256) and AES encryption/decryption (Fernet), focused on security.</p>
+                <a href="https://github.com/Mark3syt/crypto-tool" target="_blank" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <h4>PicoEngine 2D (C#)</h4>
+                <p>A small 2D game engine prototype in C# using the Entity-Component System (ECS) pattern.</p>
+                <a href="https://github.com/Mark3syt/csharp-2d-engine" target="_blank" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h3>📧 Contact</h3>
+        <p class="large-text">Want to collaborate? Join my Discord server!</p>
+        <a href="https://discord.gg/k6jJcMK26C" class="btn large-btn discord-btn" target="_blank">Join on Discord</a>
+    </section>
+    
     <div id="music-controls">
         <button id="toggle-music" title="Toggle Music">
             <i class="fas fa-volume-up"></i>
@@ -60,14 +118,14 @@
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 80, 
+                    "value": 150, /* DENSITÀ AUMENTATA */
                     "density": {
                         "enable": true,
-                        "value_area": 800 
+                        "value_area": 1000 
                     }
                 },
                 "color": {
-                    "value": "#cccccc"
+                    "value": "#ffffff" /* Bianco puro per luminosità */
                 },
                 "shape": {
                     "type": "circle",
@@ -80,14 +138,14 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.8, 
+                    "value": 1, /* MASSIMA OPACITÀ */
                     "random": false,
                     "anim": {
                         "enable": false
                     }
                 },
                 "size": {
-                    "value": 6, 
+                    "value": 3, 
                     "random": true,
                     "anim": {
                         "enable": false
@@ -95,9 +153,9 @@
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 540, /* LUNGHEZZA PRECEDENTE */
-                    "color": "#555555",
-                    "opacity": 0.3, 
+                    "distance": 250, /* Raggio medio/corto per effetto rete fitta */
+                    "color": "#ffffff", 
+                    "opacity": 0.5, 
                     "width": 1.5
                 },
                 "move": {
@@ -127,9 +185,9 @@
                 },
                 "modes": {
                     "grab": {
-                        "distance": 450, 
+                        "distance": 350, 
                         "line_linked": {
-                            "opacity": 0.8
+                            "opacity": 1
                         }
                     }
                 },
