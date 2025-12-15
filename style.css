@@ -1,15 +1,15 @@
-/* RESET E FONDAMENTALI */
+/* RESET AND FUNDAMENTALS */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000; /* Sfondo nero per il network */
+    background-color: #000; /* Deep black background */
     color: #fff;
-    line-height: 1.8; /* Aumentato per migliore leggibilità */
+    line-height: 1.8;
     overflow-x: hidden;
 }
 
-/* 1. STILE PER PARTICLES.JS (SFONDO ANIMATO) */
+/* PARTICLES.JS (ANIMATED BACKGROUND) */
 #particles-js {
     position: fixed;
     top: 0;
@@ -20,29 +20,29 @@ body {
     background-color: #000;
 }
 
-/* SEZIONI PRINCIPALI E LAYOUT: CENTRATURA E DIMENSIONE MAGGIORE */
+/* MAIN SECTIONS: CENTERING AND SIZING */
 .section {
     position: relative;
     z-index: 10;
-    padding: 60px 5%; /* Aumentato il padding */
-    max-width: 1000px; /* Aumentata la larghezza massima */
+    padding: 60px 5%;
+    max-width: 1000px;
     margin: 0 auto;
-    text-align: center; /* CENTRA TUTTO IL CONTENUTO DELLA SEZIONE */
+    text-align: center; /* CENTER CONTENT */
 }
 
 h3 {
-    font-size: 2.2em; /* Titoli più grandi */
+    font-size: 2.2em;
     margin-bottom: 25px;
-    border-bottom: 3px solid #00c4cc; /* Colore di accento diverso */
+    border-bottom: 3px solid #00c4cc; /* Accent color for section titles */
     padding-bottom: 12px;
-    display: inline-block; /* Centra il bordo inferiore */
+    display: inline-block;
 }
 
 .large-text {
-    font-size: 1.2em; /* Testo del paragrafo ingrandito */
+    font-size: 1.2em;
 }
 
-/* HERO SECTION (Sezione di apertura) */
+/* HERO SECTION */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -53,28 +53,25 @@ h3 {
     z-index: 10;
 }
 
-/* IMMAGINE INGRANDITA */
 .profile-pic {
-    width: 280px; /* Più grande */
-    height: 280px; /* Più grande */
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    border: 5px solid #00c4cc; /* Bordo colorato */
+    border: 5px solid #00c4cc;
     margin-bottom: 30px;
     object-fit: cover;
-    box-shadow: 0 0 20px rgba(0, 196, 204, 0.5); /* Ombra per evidenziare */
+    box-shadow: 0 0 20px rgba(0, 196, 204, 0.4);
 }
 
-/* NOME INGRANDITO */
 .hero-name {
-    font-size: 5.5em; /* Nome molto grande */
+    font-size: 5.5em;
     margin: 10px 0;
     letter-spacing: 2px;
 }
 
-/* SOTTOTITOLO INGRANDITO */
 .hero-subtitle {
-    font-size: 2.2em; /* Sottotitolo grande */
-    color: #00c4cc;
+    font-size: 2.2em;
+    color: #888; /* Darker grey for subtitle */
     margin-bottom: 40px;
 }
 
@@ -93,7 +90,7 @@ h3 {
 }
 
 .large-btn {
-    padding: 15px 40px; /* Bottone CTA più grande */
+    padding: 15px 40px;
     font-size: 1.3em;
 }
 
@@ -104,7 +101,7 @@ h3 {
 }
 
 .discord-btn {
-    background-color: #5865f2; /* Colore Discord */
+    background-color: #5865f2; /* Discord color */
     border-color: #5865f2;
 }
 
@@ -115,39 +112,38 @@ h3 {
 }
 
 
-/* SEZIONE SKILLS CON ICONE COLORATE E PIÙ GRANDI */
+/* SKILLS SECTION: COLORS AND SIZES */
 
-/* Definizioni dei colori specifici */
-.cpp-color { color: #00599c !important; } /* Blu C++ */
-.c-color { color: #555555 !important; } /* Grigio scuro C */
-.java-color { color: #ea2d2e !important; } /* Rosso Java */
-.js-color { color: #f7df1e !important; } /* Giallo JavaScript */
-.csharp-color { color: #9B00FF !important; } /* VIOLA C# (come richiesto) */
-.python-color { color: #306998 !important; } /* Blu Python */
-
+/* Specific color definitions for icons */
+.cpp-color { color: #00599c !important; } 
+.c-color { color: #888888 !important; } /* Darker grey for C */
+.java-color { color: #ea2d2e !important; }
+.js-color { color: #f7df1e !important; }
+.csharp-color { color: #9B00FF !important; } /* Requested purple C# */
+.python-color { color: #306998 !important; }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Carte più grandi */
-    gap: 30px; /* Maggiore spaziatura */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
     text-align: center;
 }
 
 .skill-card {
-    background-color: #111;
-    padding: 30px 15px; /* Più spazio verticale */
+    background-color: #1a1a1a; /* Darker grey card background */
+    padding: 30px 15px;
     border-radius: 12px;
     border: 2px solid #333;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill-card:hover {
-    transform: translateY(-10px); /* Effetto sollevamento */
-    box-shadow: 0 10px 20px rgba(0, 196, 204, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 196, 204, 0.2);
 }
 
 .skill-icon {
-    font-size: 4.5em; /* ICONE MOLTO GRANDI */
+    font-size: 4.5em; /* Large Icons */
     margin-bottom: 10px;
 }
 
@@ -158,10 +154,10 @@ h3 {
 }
 
 
-/* SEZIONE PROGETTI */
+/* PROJECTS SECTION */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Carte Progetto più grandi */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     margin-top: 30px;
 }
@@ -170,8 +166,8 @@ h3 {
     background-color: #1a1a1a;
     padding: 25px;
     border-radius: 12px;
-    border: 1px solid #444;
-    text-align: left; /* Il contenuto del progetto rimane allineato a sinistra */
+    border: 1px solid #333;
+    text-align: left;
 }
 
 .project-card h4 {
@@ -200,19 +196,7 @@ h3 {
     background-color: #00a0a8;
 }
 
-/* FOOTER */
-.footer {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 30px;
-    margin-top: 80px;
-    border-top: 1px solid #111;
-    font-size: 1em;
-    color: #888;
-}
-
-/* CONTROLLI MUSICA (Nessuna modifica strutturale) */
+/* MUSIC CONTROLS */
 #music-controls {
     position: fixed;
     bottom: 20px;
@@ -227,8 +211,8 @@ h3 {
     border: 2px solid #00c4cc;
     color: #00c4cc;
     border-radius: 50%;
-    width: 50px; /* Bottone più grande */
-    height: 50px; /* Bottone più grande */
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     margin-right: 15px;
     transition: background-color 0.3s;
@@ -239,10 +223,10 @@ h3 {
 }
 
 #volume-slider {
-    width: 100px; /* Slider più lungo */
+    width: 100px;
     -webkit-appearance: none;
     appearance: none;
-    height: 8px; /* Slider più spesso */
+    height: 8px;
     background: #555;
     outline: none;
     opacity: 0.8;
@@ -252,9 +236,21 @@ h3 {
 #volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 18px; /* Thumb più grande */
-    height: 18px; /* Thumb più grande */
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background: #00c4cc; /* Colore di accento */
+    background: #00c4cc;
     cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 30px;
+    margin-top: 80px;
+    border-top: 1px solid #111;
+    font-size: 1em;
+    color: #888;
 }
