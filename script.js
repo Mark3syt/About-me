@@ -1,4 +1,4 @@
-/* === GESTIONE CONTROLLI AUDIO === */
+/* === AUDIO CONTROLS MANAGEMENT === */
 
 document.addEventListener('DOMContentLoaded', () => {
     const music = document.getElementById('background-music');
@@ -6,18 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeSlider = document.getElementById('volume-slider');
     const icon = toggleButton.querySelector('i');
 
-    // Imposta il volume iniziale dall'attributo value del range input
+    // Set initial volume from the range input value
     music.volume = parseFloat(volumeSlider.value);
 
-    // Evento per attivare/disattivare la musica
+    // Event listener to toggle music
     toggleButton.addEventListener('click', () => {
         if (music.paused) {
-            // Tenta di avviare la riproduzione.
+            // Attempt to start playback.
             music.play().then(() => {
                 icon.classList.remove('fa-volume-off');
                 icon.classList.add('fa-volume-up');
             }).catch(error => {
-                console.log("Riproduzione bloccata: ", error);
+                console.log("Playback blocked: ", error);
             });
         } else {
             music.pause();
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Evento per la gestione del volume
+    // Event listener for volume control
     volumeSlider.addEventListener('input', () => {
         music.volume = parseFloat(volumeSlider.value);
     });
