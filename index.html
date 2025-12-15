@@ -106,18 +106,18 @@
 
     <script src="particles.js"></script> 
     
-    <script>
+   <script>
     particlesJS('particles-js', {
         "particles": {
             "number": {
-                "value": 80, 
+                "value": 150, /* Aumentata la quantità per l'effetto rete */
                 "density": {
                     "enable": true,
-                    "value_area": 800 
+                    "value_area": 1000 /* Area più ampia per la densità */
                 }
             },
             "color": {
-                "value": "#fff"
+                "value": "#cccccc" /* Bianco/Grigio tenue */
             },
             "shape": {
                 "type": "circle",
@@ -130,44 +130,36 @@
                 }
             },
             "opacity": {
-                "value": 0.8, 
-                "random": false,
+                "value": 0.5, /* Opacità bassa per i punti */
+                "random": true, /* Opacità variabile per un effetto più naturale */
                 "anim": {
-                    "enable": false,
-                    "speed": 2,
-                    "opacity_min": 0,
-                    "sync": false
+                    "enable": false
                 }
             },
             "size": {
-                "value": 10, /* 4 * 2.5 = 10 */
+                "value": 2, /* Punti molto piccoli */
                 "random": true,
                 "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
+                    "enable": false
                 }
             },
             "line_linked": {
                 "enable": true,
-                "distance": 375, /* 150 * 2.5 = 375 (più lunghe) */
-                "color": "#888888",
-                "opacity": 0.4,
-                "width": 2.5 /* 1 * 2.5 = 2.5 (più spesse) */
+                "distance": 180, /* Distanza media per un look a rete */
+                "color": "#999999", /* Colore linea grigio scuro */
+                "opacity": 0.2, /* Linee molto trasparenti */
+                "width": 1 /* Linee sottili */
             },
             "move": {
                 "enable": true,
-                "speed": 4, 
+                "speed": 1.5, /* Movimento lento e sottile */
                 "direction": "none",
                 "random": true,
                 "straight": false,
                 "out_mode": "out",
                 "bounce": false,
                 "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
+                    "enable": false
                 }
             },
         },
@@ -176,24 +168,21 @@
             "events": {
                 "onhover": {
                     "enable": true,
-                    "mode": "grab"
+                    "mode": "grab" /* L'effetto grab sembra essere quello predefinito */
                 },
                 "onclick": {
-                    "enable": true,
-                    "mode": "push"
+                    "enable": false
                 },
                 "resize": true
             },
             "modes": {
                 "grab": {
-                    "distance": 350, /* 140 * 2.5 = 350 (più sensibili al mouse) */
+                    "distance": 150, /* Raggio d'azione ridotto per un effetto più locale */
                     "line_linked": {
-                        "opacity": 1
+                        "opacity": 0.5
                     }
                 },
-                "push": {
-                    "particles_nb": 4
-                }
+                // Rimosse le modalità bubble e repulse per semplicità
             }
         },
         "retina_detect": true
@@ -203,4 +192,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
