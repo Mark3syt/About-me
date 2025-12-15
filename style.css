@@ -20,20 +20,46 @@ body {
     background-color: #000;
 }
 
-/* MAIN SECTIONS: ENHANCED CENTERING AND SIZING */
+/* NAVBAR FISSA IN ALTO A DESTRA */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    background: transparent;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-left: 25px;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ccc;
+    border-bottom: 2px solid #fff;
+}
+
+
+/* MAIN SECTIONS: AMPLIATE PER TUTTA LA PAGINA */
 .section {
     position: relative;
     z-index: 10;
-    padding: 80px 5%; /* Padding generoso */
-    max-width: 1200px; /* Larghezza massima */
+    padding: 80px 10%; /* Più ampiezza sui lati */
+    max-width: 100%; /* Si estende per tutta la larghezza */
     margin: 0 auto;
-    text-align: center; /* Centra il testo e la maggior parte degli elementi */
+    text-align: center;
 }
 
 h3 {
     font-size: 2.5em; 
     margin-bottom: 30px;
-    border-bottom: 4px solid #00c4cc; 
+    border-bottom: 4px solid #fff; /* Bianco/Grigio accento */
     padding-bottom: 15px;
     display: inline-block;
     letter-spacing: 1px;
@@ -58,10 +84,10 @@ h3 {
     width: 300px; 
     height: 300px;
     border-radius: 50%;
-    border: 6px solid #555; /* Bordo grigio più discreto per il tema scuro */
+    border: 6px solid #555; 
     margin-bottom: 40px;
     object-fit: cover;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Ombra discreta */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
 }
 
 .hero-name {
@@ -73,14 +99,14 @@ h3 {
 
 .hero-subtitle {
     font-size: 2.5em;
-    color: #bbb; /* Grigio chiaro per il sottotitolo */
+    color: #bbb; 
     margin-bottom: 50px;
 }
 
 .btn {
     display: inline-block;
     background-color: transparent;
-    border: 4px solid #fff; /* Bordo bianco per CTA */
+    border: 4px solid #fff; 
     color: #fff;
     padding: 15px 35px;
     text-decoration: none;
@@ -91,19 +117,14 @@ h3 {
     font-weight: bold;
 }
 
-.large-btn {
-    padding: 20px 50px; 
-    font-size: 1.5em;
-}
-
-.btn:hover {
-    background-color: #00c4cc; /* Accent color on hover */
+.large-btn:hover {
+    background-color: #fff; /* Sfondo bianco al posto dell'azzurro */
     color: #000;
-    border-color: #00c4cc;
+    border-color: #fff;
 }
 
 .discord-btn {
-    background-color: #5865f2; 
+    background-color: #5865f2; /* Mantenuto per l'identità Discord */
     border-color: #5865f2;
 }
 
@@ -116,7 +137,7 @@ h3 {
 
 /* SKILLS SECTION: COLORS AND SIZES */
 
-/* Specific color definitions for icons */
+/* I colori delle icone restano, ma l'accento generale è bianco/nero */
 .cpp-color { color: #00599c !important; } 
 .c-color { color: #888888 !important; } 
 .java-color { color: #ea2d2e !important; }
@@ -129,13 +150,15 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
     gap: 40px;
     text-align: center;
+    max-width: 1200px; /* Limita la griglia centrale */
+    margin: 0 auto;
 }
 
 .skill-card {
-    background-color: #111; /* Sfondo card molto scuro */
+    background-color: #111; 
     padding: 40px 20px;
     border-radius: 15px;
-    border: 1px solid #444; /* Bordo grigio scuro */
+    border: 1px solid #444; 
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -162,6 +185,8 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
     gap: 50px;
     margin-top: 40px;
+    max-width: 1200px; /* Limita la griglia centrale */
+    margin: 40px auto 0 auto;
 }
 
 .project-card {
@@ -174,20 +199,16 @@ h3 {
 
 .project-card h4 {
     margin-top: 0;
-    color: #00c4cc;
+    color: #fff; /* Bianco al posto dell'azzurro */
     font-size: 1.8em; 
     margin-bottom: 15px;
-}
-
-.project-card p {
-    font-size: 1.2em;
 }
 
 .project-link {
     display: inline-block;
     margin-top: 20px;
-    color: #fff;
-    background-color: #00c4cc;
+    color: #000;
+    background-color: #fff; /* Bianco al posto dell'azzurro */
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
@@ -196,10 +217,10 @@ h3 {
 }
 
 .project-link:hover {
-    background-color: #00a0a8;
+    background-color: #ccc;
 }
 
-/* MUSIC CONTROLS */
+/* MUSIC CONTROLS (Non toccati) */
 #music-controls {
     position: fixed;
     bottom: 30px;
@@ -211,8 +232,8 @@ h3 {
 
 #toggle-music {
     background: #111;
-    border: 3px solid #00c4cc;
-    color: #00c4cc;
+    border: 3px solid #fff; /* Bianco al posto dell'azzurro */
+    color: #fff;
     border-radius: 50%;
     width: 60px; 
     height: 60px;
