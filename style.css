@@ -2,15 +2,15 @@
 body {
     margin: 0;
     padding: 0;
-    /* Usa il font Clarity City se è importato correttamente, altrimenti usa un fallback */
+    /* Font richiesto (assicurati di averlo importato correttamente in <head>) */
     font-family: 'Clarity City ExtraBold 800', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000; 
     color: #fff;
-    line-height: 2; 
+    line-height: 1.6; /* Line Height ridotta per look moderno */
     overflow-x: hidden;
 }
 
-/* PARTICLES.JS (ANIMATED BACKGROUND) - Invariato */
+/* PARTICLES.JS (ANIMATED BACKGROUND) */
 #particles-js {
     position: fixed;
     top: 0;
@@ -21,14 +21,15 @@ body {
     background-color: #000;
 }
 
-/* NAVBAR FISSA IN ALTO A DESTRA - Invariato */
+/* NAVBAR FISSA IN ALTO A DESTRA */
 .navbar {
     position: fixed;
     top: 0;
     right: 0;
     z-index: 100;
     padding: 20px 40px;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.7); /* Sfondo scuro traslucido */
+    backdrop-filter: blur(5px);
 }
 
 .navbar a {
@@ -37,6 +38,7 @@ body {
     font-size: 1.2em;
     margin-left: 25px;
     padding: 5px 0;
+    font-weight: 600; 
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s, color 0.3s;
 }
@@ -51,27 +53,28 @@ body {
 .section {
     position: relative;
     z-index: 10;
-    padding: 80px 10%; 
+    padding: 100px 10%; 
     max-width: 100%; 
     margin: 0 auto;
     text-align: center;
 }
 
 h3 {
-    font-size: 2.5em; 
+    font-size: 2.8em; 
     margin-bottom: 30px;
     color: #cccccc; /* GRIGIO CHIARO per i titoli */
-    border-bottom: 4px solid #fff; /* Linea di fondo bianca */
+    border-bottom: 4px solid #fff; 
     padding-bottom: 15px;
     display: inline-block;
     letter-spacing: 1px;
+    font-weight: 800; 
 }
 
 .large-text {
     font-size: 1.4em;
 }
 
-/* HERO SECTION - Invariato, ma ora usa il nuovo font */
+/* HERO SECTION */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -142,7 +145,7 @@ h3 {
 }
 
 
-/* ICON COLORS (MANTENUTI PER LA RICONOSCIBILITÀ) */
+/* ICON COLORS (Mantenuti per la differenziazione) */
 .cpp-color { color: #00599c !important; } 
 .c-color { color: #888888 !important; } 
 .java-color { color: #ea2d2e !important; }
@@ -150,11 +153,11 @@ h3 {
 .csharp-color { color: #9B00FF !important; } 
 .python-color { color: #306998 !important; }
 
-/* SKILLS SECTION: Layout a griglia Riquadri (corretto per assicurare il funzionamento) */
+/* SKILLS SECTION: Layout a griglia come da sito di riferimento */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 50px; 
     text-align: center;
     max-width: 1200px; 
     margin: 0 auto 50px auto; 
@@ -162,7 +165,7 @@ h3 {
 
 .skill-card {
     background-color: #111; 
-    padding: 40px 20px;
+    padding: 60px 20px; 
     border-radius: 15px;
     border: 1px solid #444; 
     transition: transform 0.3s, box-shadow 0.3s;
@@ -190,11 +193,11 @@ h3 {
 }
 
 
-/* PROJECTS SECTION: Layout a griglia Riquadri (corretto per assicurare il funzionamento) */
+/* PROJECTS SECTION: Layout a griglia come da sito di riferimento */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
     margin-top: 40px;
     max-width: 1200px; 
     margin: 40px auto 0 auto;
@@ -202,8 +205,8 @@ h3 {
 
 .project-card {
     background-color: #111;
-    padding: 20px; 
-    border-radius: 8px; 
+    padding: 30px; 
+    border-radius: 15px; 
     border: 1px solid #444;
     text-align: left;
     height: 100%; 
@@ -215,13 +218,13 @@ h3 {
 .project-card h4 {
     margin-top: 0;
     color: #fff;
-    font-size: 1.2em; 
+    font-size: 1.4em; 
     margin-bottom: 5px;
     line-height: 1.2;
 }
 
 .project-card p {
-    font-size: 0.9em; 
+    font-size: 1em; 
     color: #bbb;
     line-height: 1.5;
     margin-bottom: 10px;
@@ -229,15 +232,15 @@ h3 {
 
 .project-link {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #000;
     background-color: #fff; 
-    padding: 5px 10px; 
+    padding: 8px 15px; 
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 5px;
     transition: background-color 0.3s;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 1em;
     align-self: flex-start; 
 }
 
@@ -245,7 +248,7 @@ h3 {
     background-color: #ccc;
 }
 
-/* MUSIC CONTROLS - Invariato */
+/* MUSIC CONTROLS */
 #music-controls {
     position: fixed;
     bottom: 30px;
@@ -292,7 +295,7 @@ h3 {
     cursor: pointer;
 }
 
-/* FOOTER - Invariato */
+/* FOOTER */
 .footer {
     position: relative;
     z-index: 10;
