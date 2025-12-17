@@ -36,7 +36,7 @@ body {
 .navbar a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; transition: 0.3s; }
 .navbar a:hover { color: #bbb; }
 
-.section { position: relative; z-index: 10; padding: 100px 10%; text-align: center; }
+.section { position: relative; z-index: 10; padding: 100px 5%; text-align: center; }
 
 .hero {
     min-height: 100vh;
@@ -99,17 +99,27 @@ h3 {
     padding-bottom: 10px;
 }
 
-.skills-grid, .workstation-grid {
+/* Skills Grid: Forza 6 colonne su una riga */
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Workstation Grid: 4 Colonne */
+.workstation-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
 .skill-card, .spec-card {
     background: #111;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
     border: 1px solid #333;
     transition: 0.3s;
@@ -120,7 +130,8 @@ h3 {
 
 .skill-card:hover, .spec-card:hover { transform: translateY(-10px); border-color: #fff; }
 
-.skill-icon-svg { width: 60px; height: 60px; margin-bottom: 15px; }
+.skill-icon-svg { width: 50px; height: 50px; margin-bottom: 10px; }
+.skill-name { font-size: 0.9rem; font-weight: bold; }
 
 .spec-icon { font-size: 2.5rem; color: #fff; margin-bottom: 15px; }
 .spec-info { display: flex; flex-direction: column; gap: 5px; }
@@ -160,3 +171,14 @@ h3 {
 #volume-slider { width: 80px; }
 
 .footer { position: relative; z-index: 10; text-align: center; padding: 40px; color: #666; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    .workstation-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .workstation-grid { grid-template-columns: 1fr; }
+}
