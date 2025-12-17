@@ -1,54 +1,38 @@
-/* === AUDIO CONTROLS MANAGEMENT AND SMOOTH SCROLL === */
-
 document.addEventListener('DOMContentLoaded', () => {
-    const music = document.getElementById('background-music');
-    const toggleButton = document.getElementById('toggle-music');
-    const volumeSlider = document.getElementById('volume-slider');
-    const icon = toggleButton.querySelector('i');
-
-    // 1. GESTIONE AUDIO
-    // Set initial volume from the range input value
-    music.volume = parseFloat(volumeSlider.value);
-
-    toggleButton.addEventListener('click', () => {
-        if (music.paused) {
-            // Attempt to start playback.
-            music.play().then(() => {
-                icon.classList.remove('fa-volume-off');
-                icon.classList.add('fa-volume-up');
-            }).catch(error => {
-                console.log("Playback blocked: ", error);
-            });
-        } else {
-            music.pause();
-            icon.classList.remove('fa-volume-up');
-            icon.classList.add('fa-volume-off');
+    // Particles.js Config
+    particlesJS('particles-js', {
+        "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#ffffff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 3 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+            "move": { "enable": true, "speed": 3 }
+        },
+        "interactivity": {
+            "events": { "onhover": { "enable": true, "mode": "grab" } }
         }
     });
 
-    volumeSlider.addEventListener('input', () => {
-        music.volume = parseFloat(volumeSlider.value);
+    // Audio Logic
+    const music = document.getElementById('background-music');
+    const toggleBtn = document.getElementById('toggle-music');
+    const volumeSlider = document.getElementById('volume-slider');
+
+    music.volume = 0.05;
+
+    toggleBtn.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            toggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        } else {
+            music.pause();
+            toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        }
     });
 
-    // 2. SCROLL FLUIDO (SMOOTH SCROLL)
-    const scrollLinks = document.querySelectorAll('.navbar a, .scroll-link');
-
-    scrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Previene lo scroll immediato
-            e.preventDefault();
-
-            // Ottiene l'ID della sezione
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                // Esegue lo scroll animato
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    volumeSlider.addEventListener('input', (e) => {
+        music.volume = e.target.value;
     });
 });
