@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let i = 0;
 
     function typeWriter() {
-        if (i < text.length) {
+        if (typewriterElement && i < text.length) {
             typewriterElement.innerHTML += text.charAt(i);
             i++;
             setTimeout(typeWriter, 100);
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Smooth Scroll Fix per i link interni
+    // 4. Smooth Scroll Fix per tutti i link interni
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
