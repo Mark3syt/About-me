@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Emanuele – Full Stack Developer</title>
+    <title>Start Developing – Emanuele</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+
     <div id="particles-js"></div>
 
-    <audio id="background-music" loop autoplay>
-        <source src="the path was never meant to be easy.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
     <header class="navbar">
         <div class="logo">Emanuele</div>
         <nav class="nav-links">
@@ -30,7 +30,7 @@
     <section class="hero">
         <div class="hero-content">
             <img src="profile.jpg" alt="Emanuele Profile Picture" class="profile-pic">
-            <h1 class="hero-name">Emanuele</h1>
+            <h1 class="hero-name">Start Developing</h1>
             <p class="hero-subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
             <a href="#projects" class="btn large-btn">View My Projects</a>
         </div>
@@ -38,26 +38,10 @@
 
     <section id="skills" class="section">
         <h3>Skills</h3>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-icon-svg">
-                <span class="skill-name">C++</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="skill-icon-svg">
-                <span class="skill-name">CSS</span>
-            </div>
+        <div class="skills-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 400px;">
             <div class="skill-card">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-icon-svg">
                 <span class="skill-name">Java</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" class="skill-icon-svg">
-                <span class="skill-name">JavaScript</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="skill-icon-svg">
-                <span class="skill-name">C#</span>
             </div>
             <div class="skill-card">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon-svg">
@@ -106,50 +90,33 @@
 
     <section id="about" class="section">
         <h3>About Me</h3>
-        <p class="large-text">Hello, I'm Emanuele. I specialize in building robust and scalable applications from the front-end interface down to the backend infrastructure. My curiosity drives me to explore security analysis, ensuring every line of code is as secure as it is efficient.</p>
+        <p class="large-text">Ciao, sono Emanuele. Mi occupo di creare applicazioni scalabili. Con il mio setup ad alte prestazioni, mi dedico allo sviluppo backend e alla sicurezza del codice.</p>
     </section>
 
     <section id="projects" class="section">
         <h3>Recent Projects</h3>
         <div class="projects-grid">
             <div class="project-card">
-                <h4>EasyLink (C++)</h4>
-                <p>A C++ program for shortening URLs using a personal server.</p>
-                <a href="https://github.com/Mark3syt/EasyLink" target="_blank" class="project-link">View Project</a>
-            </div>
-            <div class="project-card">
                 <h4>Scuk (Python)</h4>
-                <p>A text-based Python adventure game (CLI).</p>
+                <p>Avventura testuale in Python (CLI).</p>
                 <a href="https://github.com/Mark3syt/Scuk" target="_blank" class="project-link">View Project</a>
             </div>
             <div class="project-card">
                 <h4>Crypto-Tool CLI (Python)</h4>
-                <p>A Python CLI for file hashing and AES encryption.</p>
+                <p>Tool CLI per hashing di file ed encryption AES.</p>
                 <a href="https://github.com/Mark3syt/crypto-tool" target="_blank" class="project-link">View Project</a>
-            </div>
-            <div class="project-card">
-                <h4>PicoEngine 2D (C#)</h4>
-                <p>A small 2D game engine prototype in C# using ECS.</p>
-                <a href="https://github.com/Mark3syt/csharp-2d-engine" target="_blank" class="project-link">View Project</a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section">
         <h3>Contact</h3>
-        <p class="large-text">Want to collaborate? Join my Discord server!</p>
+        <p class="large-text">Vuoi collaborare? Entra nel mio server Discord!</p>
         <a href="https://discord.gg/k6jJcMK26C" class="btn large-btn discord-btn" target="_blank">Join on Discord</a>
     </section>
 
-    <div id="music-controls">
-        <button id="toggle-music" title="Toggle Music">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.05">
-    </div>
-
     <footer class="footer">
-        <p>&copy; 2025 Emanuele - Full Stack Developer</p>
+        <p>&copy; 2025 Emanuele - Start Developing</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
