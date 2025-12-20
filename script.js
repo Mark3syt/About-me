@@ -1,55 +1,67 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Particles.js Initialization
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#ffffff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5 },
-                "size": { "value": 3 },
-                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 2 }
-            },
-            "interactivity": {
-                "events": { "onhover": { "enable": true, "mode": "grab" } }
-            }
-        });
-    }
+setTimeout(() => {
+  document.getElementById("loading").style.display = "none";
+}, 1500);
 
-    // 2. Typing Effect
-    const text = "Full Stack Developer";
-    const typewriterElement = document.getElementById('typewriter');
-    let i = 0;
+const text = "Junior Developer";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typewriter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 200);
+  }
+}
+typeWriter();
 
-    function typeWriter() {
-        if (typewriterElement && i < text.length) {
-            typewriterElement.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    }
-    typeWriter();
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#666" },
+    size: { value: 3 },
+    move: { speed: 1 },
+    line_linked: { enable: true, color: "#333" }
+  }
+});
 
-    // 3. Audio Logic
-    const music = document.getElementById('background-music');
-    const toggleBtn = document.getElementById('toggle-music');
-    const volumeSlider = document.getElementById('volume-slider');
+fetch("https://api.github.com/users/mark3syt")
+  .then(r => r.json())
+  .then(d => document.getElementById("github-avatar").src = d.avatar_url);
 
-    if (music && toggleBtn && volumeSlider) {
-        music.volume = volumeSlider.value;
-        toggleBtn.addEventListener('click', () => {
-            if (music.paused) {
-                music.play();
-                toggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-            } else {
-                music.pause();
-                toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-            }
-        });
-        volumeSlider.addEventListener('input', (e) => {
-            music.volume = e.target.value;
-            toggleBtn.innerHTML = music.volume == 0 ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
-        });
-    }
+fetch("https://api.github.com/users/mark3syt/repos")
+  .then(r => r.json())
+  .then(repos => {
+    const c = document.getElementById("projects-container");
+    repos.forEach(repo => {
+      const d = document.createElement("div");
+      d.className = "project";
+      d.innerHTML = `<a href="${repo.html_url}" target="_blank"><h3>${repo.name}</h3><p>${repo.description || "No description"}</p></a>`;
+      c.appendChild(d);
+    });
+  });
+
+ScrollReveal().reveal("section", {
+  distance: "60px",
+  duration: 900,
+  origin: "bottom",
+  interval: 150
+});
+
+function animatePercentage(el, target) {
+  let current = 0;
+  const interval = setInterval(() => {
+    current++;
+    el.innerText = current + "%";
+    if (current >= target) clearInterval(interval);
+  }, 20);
+}
+
+ScrollReveal().reveal("#skills", {
+  afterReveal: () => {
+    document.querySelector(".python").style.width = "40%";
+    document.querySelector(".java").style.width = "65%";
+    document.querySelectorAll(".percent").forEach(p => {
+      p.style.opacity = 1;
+      animatePercentage(p, p.dataset.value);
+    });
+  }
 });
