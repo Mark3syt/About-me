@@ -65,3 +65,4 @@ ScrollReveal().reveal("#skills", {
     });
   }
 });
+.
