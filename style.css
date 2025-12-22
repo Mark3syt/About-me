@@ -156,42 +156,37 @@ section {
   font-size: 1.3rem;
 }
 
-.bottom-nav {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 18px;
-  padding: 16px 22px;
-  border-radius: 50px;
-  z-index: 100;
+.bottom-nav{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:25px;
+  padding:15px 30px;
+  border-radius:50px;
+  z-index:100;
 }
 
-.glass {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.15);
+.glass{
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 8px 32px rgba(0,0,0,.37);
 }
 
-.bottom-nav a {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.35s ease;
+.bottom-nav a{
+  color:#888;
+  font-size:1.2rem;
+  transition:.3s;
+  text-decoration:none;
 }
 
-.bottom-nav a:hover {
-  transform: scale(1.35);
-  background: rgba(255,255,255,0.3);
-  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+.bottom-nav a:hover{
+  color:#fff;
+  transform:translateY(-3px);
 }
+
 
 body {
   padding-bottom: 100px; 
@@ -212,3 +207,6 @@ body {
 .footer a:hover {
   color: #ffd700;
 }
+
+
+/* by https://salvatorerusso.xyz 
